@@ -126,9 +126,9 @@
                         </div>
 
                         <div class="links">
-                            <a href="https://hedgehogsandstuff.xyz">Original Page</a>
-                            <a href="https://eziux.xyz">Second Page</a>
-                            <a href="https://github.com/satunaite">GitHub</a>
+                            <a href="{{ url('/apie-mus') }}">Apie mus</a>
+                            <a href="{{ url('/kontaktai') }}">Kontaktai</a>
+                            <a href="https://github.com/mantaskle/pharmacology-project">GitHub</a>
                         </div>
                     </div>
             </div>
