@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $email = Auth::user()->email;
+        Mail::to($email)->send(new DemoMail());
         return view('home');
     }
 }

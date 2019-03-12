@@ -26,3 +26,12 @@ Route::get('/kontaktai', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes(['verify' => true]);
+
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
+

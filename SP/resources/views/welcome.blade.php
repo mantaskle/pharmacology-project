@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>AMAE</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -109,12 +109,12 @@
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
-                            <a href="{{ url('/home') }}">Home</a>
+                            <a href="{{ url('/home') }}">Pradžia</a>
                         @else
-                            <a href="{{ route('login') }}">Login</a>
+                            <a href="{{ route('login') }}">Prisijungti</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}">Register</a>
+                                <a href="{{ route('register') }}">Registracija</a>
                             @endif
                         @endauth
                     </div>

@@ -7,6 +7,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Mail\VerifyMail;
+use App\VerifyUser;
+use Illuminate\Support\Facades\Mail;
+use \Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -51,7 +55,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
@@ -63,10 +67,46 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => bcrypt($data['password']),
         ]);
+
+        $verifyUser = VerifyUser::create([
+            'user_id' => $user->id,
+            'token' => str_random(40)
+        ]);
+
+        Mail::to($user->email)->send(new VerifyMail($user));
+
+        return $user;
+    }
+
+    public function verifyUser($token)
+    {
+        $verifyUser = VerifyUser::where('token', $token)->first();
+        if(isset($verifyUser) ){
+            $user = $verifyUser->user;
+            if(!$user->verified) {
+                $verifyUser->user->verified = 1;
+                $verifyUser->user->save();
+                $status = "Jūsų el-paštas patvirtintas, galite prisijungti!";
+            }else{
+                $status = "Jūsų el-paštas jau patvirtintas, galite prisijungti.";
+            }
+        }else{
+            return redirect('/login')->with('warning', "Atsiprašome, tačiau Jūsų el-paštas neidentifikuotas!");
+        }
+
+        return redirect('/login')->with('status', $status);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        $this->guard()->logout();
+        return redirect('/login')->with('status', 'Mes Jums išsiuntėme patvirtinimo nuorodą. 
+        Peržiūrėkite savo el-paštą ir paspauskite nuorodą paskyros aktyvavimui.');
     }
 }
