@@ -28,12 +28,13 @@ html, body {
          .headin
          {
              color: #ffffff;
-             font-weight: 60;
+             margin-bottom: 40px;
+             font-size: 60px;
          }
          .para
          {
              color: #ffffff;
-             font-weight: 15;
+             font-size: 16px;
          }
 </style>
 @section('content')

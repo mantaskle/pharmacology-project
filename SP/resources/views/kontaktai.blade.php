@@ -72,20 +72,20 @@ html, body {
          }
          .headin
          {
-             margin-bottom: 60px;
+             margin-bottom: 40px;
              color: #ffffff;
-             font-weight: 60px;
+             font-size: 50px;
          }
          .para
          {
              color: #ffffff;
-             font-weight: 15;
+             font-size: 15px;
          }
          .vadovas
          {
-            margin-bottom: 90px;
+            margin-bottom: 60px;
              color: #f2f2f2;
-             font-weight: 15;
+             font-size: 30px;
          }
 </style>
 @section('content')
@@ -93,7 +93,7 @@ html, body {
     <h1 class = "headin">KONTAKTAI</h1>
     <div class="vadovas">
         <h2>Projekto vadovas - Darius Naujokaitis</h2>
-        <p>darius.naujokaitis@ktu.lt</p>
+        <p style = "font-size: 20px;">darius.naujokaitis@ktu.lt</p>
   </div>
     <div class="row">
   <div class="maincolumn">
