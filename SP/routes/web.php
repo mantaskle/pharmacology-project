@@ -27,11 +27,22 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::middleware(['auth'])->group(function () {
+    Route::get('/approval', 'HomeController@approval')->name('approval');
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::middleware(['approved'])->group(function () {
+        Route::get('/home', 'HomeController@index')->name('home');
+    });
 
-Auth::routes(['verify' => true]);
+    Route::middleware(['admin'])->group(function () {
+        Route::get('/users', 'UserController@index')->name('admin.users.index');
+        Route::get('/users/{user_id}/approve', 'UserController@approve')->name('admin.users.approve');
+        Route::get('/users/{user_id}/destroy', 'UserController@destroy')->name('admin.users.destroy');
+        
+    });
 
-Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
-
+    Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+        Route::resource('home', 'HomeController');
+        Route::resource('users', 'UserController');
+    });
+});
