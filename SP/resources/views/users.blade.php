@@ -31,7 +31,7 @@
                                     <td><a href="{{ route('admin.users.approve', $user->id) }}"
                                            class="btn btn-primary btn-sm">Patvirtinti</a>
                                     </td>
-                                    <td><form action="{{ route('admin.users.destroy', $user->id) }}" method="POST"
+                                    <td><form action="{{ route('admin.users.destroy', $user->id) }}" method="DELETE"
                                               style="display: inline"
                                               onsubmit="return confirm('Ar tikrai norite tęsti?');">
                                             <input type="hidden" name="_method" value="DELETE">

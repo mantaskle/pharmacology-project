@@ -25,7 +25,7 @@ class UserController extends Controller
     public function destroy($user_id)
     {
         $user = User::findOrFail($user_id);
-        $user->destroy();
+        $user->delete();
 
         return redirect()->route('admin.users.index')->withMessage('Vartotojo registracija atmesta sėkmingai!');
     }
