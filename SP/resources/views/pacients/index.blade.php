@@ -53,7 +53,7 @@
 </div>
 <script>
 $(document).ready(function(){
-    $('.delete_form').on('submit', function(){
+$('.delete_form').on('submit', function(){
         if(confirm("Ar tikrai norite pašalinti šį pacientą?"))
         {
             return true;

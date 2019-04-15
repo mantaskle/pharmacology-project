@@ -23,6 +23,18 @@ Route::get('/kontaktai', function () {
     return view('kontaktai');
 });
 
+Route::get('/vaistu-dozavimas', function () {
+    return view('vaistu-dozavimas');
+});
+
+Route::get('/vaistai', function () {
+    return view('vaistai');
+});
+
+Route::get('/paskirti-receptai', function () {
+    return view('paskirti-receptai');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

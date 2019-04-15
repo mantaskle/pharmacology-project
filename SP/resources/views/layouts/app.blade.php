@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <style>
-html, body {
-                background-image: url("/css/img/background.jpg");
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                color: #c4c4c4;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+html, body 
+{
+    background-image: url("/css/img/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ffffff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+div.row
+{
+    padding: 25px
+}
+h3
+{
+    color: #ffffff !important;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ffffff;
+  color: inherit;
+}
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f1f1f1 !important;}
+tr:hover {background-color: #ddd !important;}
+tr {background-color: #ffffff !important;}
+
 </style>
 <head>
     <meta charset="utf-8">
@@ -61,10 +88,10 @@ html, body {
                                 {{ __('Įrankiai') }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('edit_profile') }}" >{{ __('Vaistų dozavimas') }}</a>  
-                                    <a class="dropdown-item" href="{{ route('profile') }}" >{{ __('Vaistai') }}</a>
+                                    <a class="dropdown-item" href="{{ url('/vaistu-dozavimas') }}" >{{ __('Vaistų dozavimas') }}</a>  
+                                    <a class="dropdown-item" href="{{ url('/vaistai') }}" >{{ __('Vaistai') }}</a>
                                     <a class="dropdown-item" href="{{ url('/pacients') }}" >{{ __('Pacientai') }}</a>                                  
-                                    <a class="dropdown-item" href="{{ route('edit_profile') }}" >{{ __('Paskirti receptai') }}</a>
+                                    <a class="dropdown-item" href="{{ url('/paskirti-receptai') }}" >{{ __('Paskirti receptai') }}</a>
                                 </div>
                             </li>
                         </a> 
