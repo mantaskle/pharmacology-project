@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<style>
+html, body {
+                background-image: url("/css/img/background.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: #c4c4c4;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+</style>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

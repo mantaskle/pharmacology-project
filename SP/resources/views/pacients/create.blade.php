@@ -45,7 +45,7 @@
     <input type="text" name="last_name" class="form-control" placeholder="Įveskite papildomą informaciją (ankstesnė gydymo istorija)" />
    </div>
    <div class="form-group">
-    <input type="submit" class="btn btn-primary" />
+    <input type="submit" class="btn btn-primary" value="Pateikti" />
    </div>
   </form>
  </div>
