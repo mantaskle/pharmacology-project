@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Jūs prisijungėte!
+                    Sveiki sugrįžę!
                 </div>
             </div>
         </div>

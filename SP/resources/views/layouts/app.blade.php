@@ -38,7 +38,29 @@
                 
                     @else
 
-                    <a class="nav-link" href="{{ url('/home') }}">{{ __('Pradžia') }}</a>
+                    <a class="nav-link" href="{{ url('/home') }}">{{ __('Pradžia') }}</a>  
+
+                    @if (!is_null(Auth::user()->approved_at))     
+
+                        <a class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ __('Įrankiai') }} <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('edit_profile') }}" >{{ __('Vaistų dozavimas') }}</a>  
+                                    <a class="dropdown-item" href="{{ route('profile') }}" >{{ __('Vaistai') }}</a>
+                                    <a class="dropdown-item" href="{{ route('edit_profile') }}" >{{ __('Pacientai') }}</a>                                  
+                                    <a class="dropdown-item" href="{{ route('edit_profile') }}" >{{ __('Paskirti receptai') }}</a>
+                                </div>
+                            </li>
+                        </a>        
+
+
+                        <a class="nav-link" href="{{ url('/home') }}">{{ __('WIKI') }}</a>                    
+                        <a class="nav-link" href="{{ url('/home') }}">{{ __('Užklausos') }}</a>
+
+                    @endif
 
                     @if(Auth::user()->admin) 
                     
@@ -69,6 +91,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    @if (!is_null(Auth::user()->approved_at)) 
+                                        <a class="dropdown-item" href="{{ route('profile') }}" >{{ __('Mano paskyra') }}</a>
+                                        <a class="dropdown-item" href="{{ route('edit_profile') }}" >{{ __('Paskyros redagavimas') }}</a>
+                                    @endif
+                                    
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

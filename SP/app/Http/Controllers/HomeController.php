@@ -32,4 +32,14 @@ class HomeController extends Controller
     {
         return view('approval');
     }
+
+    public function edit_profile()
+    {
+        return view('edit_profile');
+    }
+
+    public function profile()
+    {
+        return view('profile');
+    }
 }
