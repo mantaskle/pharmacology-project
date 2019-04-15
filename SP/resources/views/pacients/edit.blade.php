@@ -41,7 +41,7 @@
     <input type="text" name="additional_information" class="form-control" value="{{$pacients->additional_information}}" placeholder="Įveskite papildomą informaciją (ankstesnė gydymo istorija)" />
    </div>
    <div class="form-group">
-    <input type="submit" class="btn btn-primary" value="Redaguoti" />
+    <input type="submit" class="btn btn-primary" value="Išsaugoti" />
    </div>
   </form>
  </div>

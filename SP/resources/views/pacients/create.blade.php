@@ -21,31 +21,31 @@
   </div>
   @endif
 
-  <form method="post" action="{{url('pacients')}}">
+  <form method="POST" action="{{url('pacients')}}">
    {{csrf_field()}}
    <div class="form-group">
-    <input type="text" name="first_name" class="form-control" placeholder="Įveskite vardą" />
+    <input type="text" name="name" class="form-control" placeholder="Įveskite vardą" />
    </div>
    <div class="form-group">
-    <input type="text" name="last_name" class="form-control" placeholder="Įveskite pavardę" />
+    <input type="text" name="surname" class="form-control" placeholder="Įveskite pavardę" />
    </div>
    <div class="form-group">
-    <input type="text" name="last_name" class="form-control" placeholder="Įveskite amžių" />
+    <input type="text" name="age" class="form-control" placeholder="Įveskite amžių" />
    </div>
    <div class="form-group">
-    <input type="text" name="last_name" class="form-control" placeholder="Įveskite ūgį (centimetrais)" />
+    <input type="text" name="height" class="form-control" placeholder="Įveskite ūgį (centimetrais)" />
    </div>
    <div class="form-group">
-    <input type="text" name="last_name" class="form-control" placeholder="Įveskite svorį (kilogramais)" />
+    <input type="text" name="weight" class="form-control" placeholder="Įveskite svorį (kilogramais)" />
    </div>
    <div class="form-group">
-    <input type="text" name="last_name" class="form-control" placeholder="Įveskite skausmo lygmenį (0-10)" />
+    <input type="text" name="condition" class="form-control" placeholder="Įveskite skausmo lygmenį (0-10)" />
    </div>
    <div class="form-group">
-    <input type="text" name="last_name" class="form-control" placeholder="Įveskite papildomą informaciją (ankstesnė gydymo istorija)" />
+    <input type="text" name="additional_information" class="form-control" placeholder="Įveskite papildomą informaciją (ankstesnė gydymo istorija)" />
    </div>
    <div class="form-group">
-    <input type="submit" class="btn btn-primary" value="Pateikti" />
+    <input type="submit" class="btn btn-primary" value="Išsaugoti"/>
    </div>
   </form>
  </div>

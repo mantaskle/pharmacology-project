@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 15, 2019 at 08:54 AM
+-- Generation Time: Apr 15, 2019 at 09:57 AM
 -- Server version: 5.7.21
 -- PHP Version: 7.2.4
 
@@ -94,6 +94,13 @@ CREATE TABLE IF NOT EXISTS `pacients` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `pacients`
+--
+
+INSERT INTO `pacients` (`id`, `name`, `surname`, `age`, `height`, `weight`, `condition`, `treatment_done`, `additional_information`, `created_at`, `updated_at`) VALUES
+(1, 'Jonas', 'Jonaitis', 64, 182, 77, 3, 0, 'Pirmas gydymas morfinu.', '2019-04-15 06:55:14', '2019-04-15 06:55:14');
+
 -- --------------------------------------------------------
 
 --
@@ -135,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `admin`, `approved_at`) VALUES
-(1, 'Admin', 'admin@admin.com', '2019-03-26 20:01:57', '$2y$10$7xhqOtrY4AKOK4VIXGl0g.yalsZgCF/c.dgm.9//lRDJRpwzC31vi', 'XJhGFzw5W7djkUj2wthqRhhoJFjfZ5EcDuqFLrCBb0toIYxBmHkhk12C8NEX', '2019-03-26 18:01:57', '2019-03-26 18:01:57', 1, '2019-03-26 18:01:57'),
+(1, 'Admin', 'admin@admin.com', '2019-03-26 20:01:57', '$2y$10$7xhqOtrY4AKOK4VIXGl0g.yalsZgCF/c.dgm.9//lRDJRpwzC31vi', 'RSSVCxxjwNt9TrYQRktegacyQNZcVeKE1DDeV0kJzmulrDdL8LRmnIzUATk1', '2019-03-26 18:01:57', '2019-03-26 18:01:57', 1, '2019-03-26 18:01:57'),
 (15, 'notauth', 'not@mail.com', NULL, '$2y$10$nVtb5u1bF92jR9xfCKhfqOKTJzvjJvVXPbNMFzOl6CaiVKFzQr5yO', NULL, '2019-04-15 03:07:55', '2019-04-15 03:07:55', 0, NULL),
 (14, 'testinis', 'egle@mail.com', NULL, '$2y$10$9pOVmEPcWsX0aywtjrkgAOAqxkC9sD.j9BuDlhqD4SJM9EVQ9Htyy', NULL, '2019-04-15 03:01:05', '2019-04-15 03:01:46', 0, '2019-04-15 03:01:46');
 COMMIT;

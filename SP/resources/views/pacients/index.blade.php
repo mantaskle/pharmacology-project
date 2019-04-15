@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-12">
   <br/>
-    <h3 allign="center">Pecientų informacija</h3>
+    <h3 allign="center">Pacientų informacija</h3>
   <br/>
   @if($message = Session::get('success'))
     <div class="alert alert-success">
@@ -43,7 +43,7 @@
             <form method="post" class="delete_form" action="{{action('PacientsController@destroy', $row['id'])}}">
          {{csrf_field()}}
             <input type="hidden" name="_method" value="DELETE" />
-            <button type="submit" class="btn btn-danger">Pažalinti</button>
+            <button type="submit" class="btn btn-danger">Šalinti</button>
             </form>
         </td>
    </tr>
