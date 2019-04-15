@@ -41,7 +41,7 @@
                     <a class="nav-link" href="{{ url('/home') }}">{{ __('Pradžia') }}</a>  
 
                     @if (!is_null(Auth::user()->approved_at))     
-
+                        @if(Auth::user()->admin==false)
                         <a class="navbar-nav ml-auto">
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -50,14 +50,16 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('edit_profile') }}" >{{ __('Vaistų dozavimas') }}</a>  
                                     <a class="dropdown-item" href="{{ route('profile') }}" >{{ __('Vaistai') }}</a>
-                                    <a class="dropdown-item" href="{{ route('edit_profile') }}" >{{ __('Pacientai') }}</a>                                  
+                                    <a class="dropdown-item" href="{{ url('/pacients') }}" >{{ __('Pacientai') }}</a>                                  
                                     <a class="dropdown-item" href="{{ route('edit_profile') }}" >{{ __('Paskirti receptai') }}</a>
                                 </div>
                             </li>
-                        </a>        
+                        </a> 
 
+                        <a class="nav-link" href="{{ url('/home') }}">{{ __('WIKI') }}</a> 
 
-                        <a class="nav-link" href="{{ url('/home') }}">{{ __('WIKI') }}</a>                    
+                        @endif
+
                         <a class="nav-link" href="{{ url('/home') }}">{{ __('Užklausos') }}</a>
 
                     @endif

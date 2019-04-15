@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 15, 2019 at 07:28 AM
+-- Generation Time: Apr 15, 2019 at 08:54 AM
 -- Server version: 5.7.21
 -- PHP Version: 7.2.4
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -69,7 +69,30 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (40, '2019_03_26_192224_add_admin_to_users_table', 1),
 (41, '2019_03_28_160447_create_medications_table', 2),
 (39, '2014_10_12_100000_create_password_resets_table', 1),
-(38, '2014_10_12_000000_create_users_table', 1);
+(38, '2014_10_12_000000_create_users_table', 1),
+(42, '2019_04_15_073913_create_pacients_table', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pacients`
+--
+
+DROP TABLE IF EXISTS `pacients`;
+CREATE TABLE IF NOT EXISTS `pacients` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `surname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age` int(11) NOT NULL,
+  `height` int(11) NOT NULL,
+  `weight` int(11) NOT NULL,
+  `condition` int(11) NOT NULL,
+  `treatment_done` tinyint(1) NOT NULL DEFAULT '0',
+  `additional_information` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -112,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `admin`, `approved_at`) VALUES
-(1, 'Admin', 'admin@admin.com', '2019-03-26 20:01:57', '$2y$10$7xhqOtrY4AKOK4VIXGl0g.yalsZgCF/c.dgm.9//lRDJRpwzC31vi', 'LuXn50QKv3R8ictWTdoorioXU2uXM7TU3vJBIWfXeELMkBysDo0tCihQqDJL', '2019-03-26 18:01:57', '2019-03-26 18:01:57', 1, '2019-03-26 18:01:57'),
+(1, 'Admin', 'admin@admin.com', '2019-03-26 20:01:57', '$2y$10$7xhqOtrY4AKOK4VIXGl0g.yalsZgCF/c.dgm.9//lRDJRpwzC31vi', 'XJhGFzw5W7djkUj2wthqRhhoJFjfZ5EcDuqFLrCBb0toIYxBmHkhk12C8NEX', '2019-03-26 18:01:57', '2019-03-26 18:01:57', 1, '2019-03-26 18:01:57'),
 (15, 'notauth', 'not@mail.com', NULL, '$2y$10$nVtb5u1bF92jR9xfCKhfqOKTJzvjJvVXPbNMFzOl6CaiVKFzQr5yO', NULL, '2019-04-15 03:07:55', '2019-04-15 03:07:55', 0, NULL),
 (14, 'testinis', 'egle@mail.com', NULL, '$2y$10$9pOVmEPcWsX0aywtjrkgAOAqxkC9sD.j9BuDlhqD4SJM9EVQ9Htyy', NULL, '2019-04-15 03:01:05', '2019-04-15 03:01:46', 0, '2019-04-15 03:01:46');
 COMMIT;
