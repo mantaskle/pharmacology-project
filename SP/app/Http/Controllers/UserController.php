@@ -29,5 +29,4 @@ class UserController extends Controller
 
         return redirect()->route('admin.users.index')->withMessage('Vartotojo registracija atmesta sėkmingai!');
     }
-
 }

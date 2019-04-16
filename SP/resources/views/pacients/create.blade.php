@@ -4,8 +4,9 @@
 <div class="row">
  <div class="col-md-12">
   <br />
-  <h3 aling="center">Pridėti</h3>
+  <h3 aling="center">Pridėti pacientą</h3>
   <br />
+
   @if(count($errors) > 0)
   <div class="alert alert-danger">
    <ul>
@@ -20,7 +21,6 @@
    <p>{{ \Session::get('success') }}</p>
   </div>
   @endif
-
   <form method="POST" action="{{url('pacients')}}">
    {{csrf_field()}}
    <div class="form-group">
@@ -46,6 +46,8 @@
    </div>
    <div class="form-group">
     <input type="submit" class="btn btn-primary" value="Išsaugoti"/>
+    <td><a href="{{ route('pacients.index') }}" class="btn btn-primary btn-m">Atgal</a>
+    </td>
    </div>
   </form>
  </div>
