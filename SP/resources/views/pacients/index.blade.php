@@ -40,10 +40,10 @@
         <td>{{$row['additional_information']}}</td>
         <td><a href="{{action('PacientsController@edit', $row['id'])}}" class="btn btn-warning">Redaguoti</a></td>
         <td>
-            <form method="post" class="delete_form" action="{{action('PacientsController@destroy', $row['id'])}}">
-         {{csrf_field()}}
-            <input type="hidden" name="_method" value="DELETE" />
-            <button type="submit" class="btn btn-danger">Šalinti</button>
+            <form action="{{action('PacientsController@destroy', $row['id'])}}" method="post" class="delete_form"
+                style="display: inline" onsubmit="return confirm('Ar tikrai norite pašalinti pacientą?');">
+                    <input type="hidden" name="_method" value="DELETE">{{ csrf_field() }}
+                        <button class="btn btn-danger">Šalinti</button>
             </form>
         </td>
    </tr>
