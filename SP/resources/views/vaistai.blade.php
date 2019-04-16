@@ -1,3 +1,11 @@
+<style>
+td 
+{
+    text-align: center; 
+    vertical-align: middle;
+}
+</style>
+
 @extends('layouts.app')
 
 @section('content')
@@ -10,14 +18,14 @@
                 <div class="card-body">
                 <table class="table table-bordered table-striped">
                 <tr>
-                    <th>Pavadinimas</th>
+                    <th colspan="2">Pavadinimas</th>
                 </tr>
-                <tr><td>Morfinas</td></tr>
-                <tr><td>Codeine</td></tr> 
-                <tr><td>Oxycodone</td></tr> 
-                <tr><td>Methadone</td></tr> 
-                <tr><td>Hydromorphone</td></tr>
-                <tr><td>Meperidine</td></tr>
+                <tr><td>Morfinas</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr>
+                <tr><td>Codeine</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr> 
+                <tr><td>Oxycodone</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr> 
+                <tr><td>Methadone</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr> 
+                <tr><td>Hydromorphone</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr>
+                <tr><td>Meperidine</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr>
                 </table>
                 </div>
             </div>
