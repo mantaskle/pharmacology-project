@@ -26,6 +26,8 @@
         <th>Pacientas</th>
         <th>Paskirti vaistai</th>
         <th>Papildoma informacija</th>
+        <th>Redaguoti</th>
+        <th>Šalinti</th>
         </tr>
    @foreach($prescriptions as $row)
     <tr>

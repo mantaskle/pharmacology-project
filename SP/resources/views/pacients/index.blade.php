@@ -13,7 +13,7 @@
     </div>
   @endif
     <div allign="right">
-        <a class="btn btn-primary" href="{{route('pacients.create')}}">Pridėti pacientą</a>
+        <a class="btn btn-primary" href="{{route('prescriptions.create')}}">Pridėti pacientą</a>
     <br/>
     <br/>
     </div>
@@ -38,10 +38,10 @@
         <td>{{$row['weight']}}</td>
         <td>{{$row['condition']}}</td>
         <td>{{$row['additional_information']}}</td>
-        <td><a href="{{action('PacientsController@edit', $row['id'])}}" class="btn btn-warning">Redaguoti</a></td>
+        <td><a href="{{action('PrescriptionsController@edit', $row['id'])}}" class="btn btn-warning">Redaguoti</a></td>
         <td>
-            <form action="{{action('PacientsController@destroy', $row['id'])}}" method="post" class="delete_form"
-                style="display: inline" onsubmit="return confirm('Ar tikrai norite pašalinti pacientą?');">
+            <form action="{{action('PrescriptionsController@destroy', $row['id'])}}" method="post" class="delete_form"
+                style="display: inline" onsubmit="return confirm('Ar tikrai norite pašalinti šį receptą?');">
                     <input type="hidden" name="_method" value="DELETE">{{ csrf_field() }}
                         <button class="btn btn-danger">Šalinti</button>
             </form>
@@ -54,7 +54,7 @@
 <script>
 $(document).ready(function(){
 $('.delete_form').on('submit', function(){
-        if(confirm("Ar tikrai norite pašalinti šį pacientą?"))
+        if(confirm("Ar tikrai norite pašalinti šį receptą?"))
         {
             return true;
         }
