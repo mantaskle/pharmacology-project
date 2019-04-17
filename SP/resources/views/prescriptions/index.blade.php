@@ -12,35 +12,31 @@
     </div>
   @endif
     <div allign="right">
-        <a class="btn btn-primary" href="{{route('paskirti-receptai.create')}}">Pridėti receptą</a>
+        <a class="btn btn-primary" href="{{route('prescriptions.create')}}">Pridėti receptą</a>
     <br/>
     <br/>
     </div>
     <table class="table table-bordered table-striped">
     <tr>
-        <th>Column1</th>
-        <th>Column2</th>
-        <th>Column3</th>
-        <th>Column4</th>
-        <th>Column5</th>
-        <th>Column6</th>
-        <th>Column7</th>
-        <th>Column8</th>
-        <th>Column9</th>
-        <th>Column10</th>
+        <th>Pavadinimas</th>
+        <th>Kiekis</th>
+        <th>Laikas / Kiekis</th>
+        <th>Data nuo</th>
+        <th>Data iki</th>
+        <th>Pacientas</th>
+        <th>Paskirti vaistai</th>
+        <th>Papildoma informacija</th>
         </tr>
-   @foreach($prescription as $row)
+   @foreach($prescriptions as $row)
     <tr>
-        <td>{{$row['value1']}}</td>
-        <td>{{$row['value2']}}</td>
-        <td>{{$row['value3']}}</td>
-        <td>{{$row['value4']}}</td>
-        <td>{{$row['value5']}}</td>
-        <td>{{$row['value6']}}</td>
-        <td>{{$row['value7']}}</td>
-        <td>{{$row['value8']}}</td>
-        <td>{{$row['value9']}}</td>
-        <td>{{$row['value10']}}</td>
+        <td>{{$row['name']}}</td>
+        <td>{{$row['dosage_amount']}}</td>
+        <td>{{$row['dosage_time']}}</td>
+        <td>{{$row['from_date']}}</td>
+        <td>{{$row['to_date']}}</td>
+        <td>{{$row['pacient_id']}}</td>
+        <td>{{$row['medication_id']}}</td>
+        <td>{{$row['additional_information']}}</td>
         <td><a href="{{action('PrescriptionsController@edit', $row['id'])}}" class="btn btn-warning">Redaguoti</a></td>
         <td>
         <form action="{{action('PrescriptionsController@destroy', $row['id'])}}" method="post" class="delete_form"

@@ -31,9 +31,6 @@ Route::get('/vaistai', function () {
     return view('vaistai');
 });
 
-Route::get('/paskirti-receptai', function () {
-    return view('paskirti-receptai');
-});
 
 Auth::routes();
 
@@ -44,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit_profile', 'HomeController@edit_profile')->name('edit_profile');
     Route::get('/profile', 'HomeController@profile')->name('profile');
     Route::resource('pacients', 'PacientsController');
+    Route::resource('prescriptions', 'PrescriptionsController');
 
     Route::middleware(['approved'])->group(function () {
         Route::get('/home', 'HomeController@index')->name('home');

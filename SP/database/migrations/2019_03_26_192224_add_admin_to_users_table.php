@@ -13,7 +13,8 @@ class AddAdminToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {            
+            $table->engine = 'InnoDB';
             $table->boolean('admin')->default(false);
             $table->timestamp('approved_at')->nullable();
         });

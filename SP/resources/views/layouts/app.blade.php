@@ -91,7 +91,7 @@ tr {background-color: #ffffff !important;}
                                     <a class="dropdown-item" href="{{ url('/vaistu-dozavimas') }}" >{{ __('Vaistų dozavimas') }}</a>  
                                     <a class="dropdown-item" href="{{ url('/vaistai') }}" >{{ __('Vaistai') }}</a>
                                     <a class="dropdown-item" href="{{ url('/pacients') }}" >{{ __('Pacientai') }}</a>                                  
-                                    <a class="dropdown-item" href="{{ url('/paskirti-receptai') }}" >{{ __('Paskirti receptai') }}</a>
+                                    <a class="dropdown-item" href="{{ url('/prescriptions') }}" >{{ __('Paskirti receptai') }}</a>
                                 </div>
                             </li>
                         </a> 
