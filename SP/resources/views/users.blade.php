@@ -20,8 +20,10 @@
                                 <th>Vartotojo vardas</th>
                                 <th>El.paštas</th>
                                 <th>Registracija</th>
+                                @if($users == null)
                                 <th></th>
                                 <th></th>
+                                @endif
                             </tr>
                             @forelse ($users as $user)
                                 <tr>
@@ -42,7 +44,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4">Naujų vartotojų nerasta.</td>
+                                    <td colspan="3">Naujų vartotojų nerasta.</td>
                                 </tr>
                             @endforelse
                         </table>
