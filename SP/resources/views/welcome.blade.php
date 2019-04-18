@@ -128,7 +128,6 @@
                         <div class="links">
                             <a href="{{ url('/apie-mus') }}">Apie mus</a>
                             <a href="{{ url('/kontaktai') }}">Kontaktai</a>
-                            <a href="https://github.com/mantaskle/pharmacology-project">GitHub</a>
                         </div>
                     </div>
             </div>

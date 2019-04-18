@@ -31,15 +31,15 @@ class HomeController extends Controller
     public function approval()
     {
         return view('approval');
+    }    
+
+    public function profile()
+    {
+        return view('profile');
     }
 
     public function edit_profile()
     {
         return view('edit_profile');
-    }
-
-    public function profile()
-    {
-        return view('profile');
     }
 }

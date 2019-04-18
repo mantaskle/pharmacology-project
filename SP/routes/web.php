@@ -43,6 +43,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('pacients', 'PacientsController');
     Route::resource('prescriptions', 'PrescriptionsController');
 
+    Route::get('wiki', function() { return view('menu.wiki');} );
+    Route::get('tickets', function() {return view('menu.tickets');} );
+
     Route::middleware(['approved'])->group(function () {
         Route::get('/home', 'HomeController@index')->name('home');
     });

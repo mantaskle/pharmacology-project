@@ -96,11 +96,11 @@ tr {background-color: #ffffff !important;}
                             </li>
                         </a> 
 
-                        <a class="nav-link" href="{{ url('/home') }}">{{ __('WIKI') }}</a> 
+                        <a class="nav-link" href="{{ url('wiki') }}">{{ __('WIKI') }}</a> 
 
                         @endif
 
-                        <a class="nav-link" href="{{ url('/home') }}">{{ __('Užklausos') }}</a>
+                        <a class="nav-link" href="{{ url('tickets') }}">{{ __('Užklausos') }}</a>
 
                     @endif
 
