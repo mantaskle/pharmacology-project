@@ -13,6 +13,7 @@ class CreatePacientsTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('pacients', function (Blueprint $table) {            
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');            

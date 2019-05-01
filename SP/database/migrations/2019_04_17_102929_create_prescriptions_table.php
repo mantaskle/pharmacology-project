@@ -17,9 +17,7 @@ class CreatePrescriptionsTable extends Migration
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');                        
-            $table->string('name');
-            $table->integer('dosage_amount');
-            $table->integer('dosage_time');
+            $table->string('prescription_id');
             $table->date('from_date');
             $table->date('to_date');
             $table->string('additional_information');

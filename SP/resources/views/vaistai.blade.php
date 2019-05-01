@@ -20,7 +20,7 @@ td
                 <tr>
                     <th colspan="2">Pavadinimas</th>
                 </tr>
-                <tr><td>Morfinas</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr>
+                <tr><td>Morphine</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr>
                 <tr><td>Codeine</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr> 
                 <tr><td>Oxycodone</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr> 
                 <tr><td>Methadone</td><td><a href="" class="btn btn-warning">Daugiau informacijos</a></td></tr> 

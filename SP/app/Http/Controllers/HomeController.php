@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -38,8 +39,23 @@ class HomeController extends Controller
         return view('profile');
     }
 
-    public function edit_profile()
+    public function edit()
+    {        
+        $user = User::find(Auth::user()->id);
+        return view('edit_profile', compact('user'));
+    }
+
+    public function update(Request $request, $id)
     {
-        return view('edit_profile');
+        $this->validate($request, [
+            'name'    =>  'required',
+            'email'     =>  'required'
+        ]);
+
+        $user = User::find($id);
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');  
+        $user->save();
+        return redirect()->route('profile')->with('success', 'Informacija atnaujinta');
     }
 }

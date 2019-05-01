@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Prescriptions;
-use App\Pacients;
 use App\Medication;
+use App\Pacients;
 
-class PrescriptionsController extends Controller
+class DosageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,8 @@ class PrescriptionsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $prescriptions = Prescriptions::all()->toArray();
-
-        return view('prescriptions.index', compact('prescriptions'));
+    {        
+        return view('vaistu-dozavimas');
     }
 
     /**
@@ -28,7 +25,7 @@ class PrescriptionsController extends Controller
      */
     public function create()
     {
-        return view('prescriptions.create');
+        return view('vaistu-dozavimas');
     }
 
     /**
@@ -40,44 +37,22 @@ class PrescriptionsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'prescription_id'    =>  'required',
-            'from_date'    =>  'required',
-            'to_date'    =>  'required',
-            'additional_information'    => 'required',
-            'pacient_id'    =>  'required',
-            'medication_id'    =>  'required'
-
+            'age'   =>  'required',
+            'weight'    =>  'required',
+            'pain'    =>  'required',
+            'medication'    => 'required'
         ]);
-        $prescriptions = new Prescriptions([
-            'prescription_id'    =>  $request->get('prescription_id'),
-            'from_date'    =>  $request->get('from_date'),
-            'to_date'    =>  $request->get('to_date'),
-            'additional_information' => $request->get('additional_information'),
-            'pacient_id'    =>  $request->get('pacient_id'),
-            'medication_id'    =>  $request->get('medication_id')
-        ]);
-        $prescriptions->save();
-        return redirect()->route('prescriptions.create')->with('success', 'Informacija pridėta');
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $prescription = Prescriptions::find($id);
-        $p = Pacients::find($prescription->pacient_id);
-        
-        
+        $age = $request->get('age');
+        $weight = $request->get('weight');
+        $pain= $request->get('pain');        
+        $medication = $request->get('medication');
+
+        $selectedID = 1;
+
         $quantity = 0; 
         $time = 0;
         
-        $pain = $p['condition'];
-        $age = $p['age'];
-        $weight = $p['weight'];
         switch ($pain)
         {
             case ($pain < 4 && $pain > 0):
@@ -120,8 +95,7 @@ class PrescriptionsController extends Controller
             break;
         }
 
-        $med = Medication::find($prescription->medication_id)->name;
-        switch($med)
+        switch($medication)
         {
             case 'Morphine':
                 $quantity = $quantity / 10;
@@ -154,9 +128,20 @@ class PrescriptionsController extends Controller
                 $quantity = $quantity / 10;
             break;
 
-        }        
-        
-        return view('prescriptions.results', compact('quantity', 'time', 'p', 'prescription', 'med'));
+        }     
+
+        return view('/rezultatai', compact('time', 'quantity', 'medication'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {    
+        //
     }
 
     /**
@@ -167,8 +152,7 @@ class PrescriptionsController extends Controller
      */
     public function edit($id)
     {
-        $prescriptions = prescriptions::find($id);
-        return view('prescriptions.edit', compact('prescriptions', 'id'));
+        //
     }
 
     /**
@@ -180,23 +164,7 @@ class PrescriptionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'prescription_id'    =>  'required',
-            'from_date'    =>  'required',
-            'to_date'    =>  'required',
-            'additional_information'    => 'required',
-            'pacient_id'    =>  'required',
-            'medication_id'    =>  'required'
-        ]);
-        $prescriptions = Prescriptions::find($id);
-        $prescriptions->prescription_id = $request->get('prescription_id');
-        $prescriptions->from_date = $request->get('from_date');        
-        $prescriptions->to_date = $request->get('to_date');
-        $prescriptions->additional_information = $request->get('additional_information');
-        $prescriptions->pacient_id = $request->get('pacient_id');        
-        $prescriptions->medication_id = $request->get('medication_id');
-        $prescriptions->save();
-        return redirect()->route('prescriptions.index')->with('success', 'Informacija atnaujinta');
+        //
     }
 
     /**
@@ -207,8 +175,6 @@ class PrescriptionsController extends Controller
      */
     public function destroy($id)
     {
-        $prescriptions = Prescriptions::find($id);
-        $prescriptions->delete();
-        return redirect()->route('prescriptions.index')->with('success', 'Informacija pašalinta');
+        //
     }
 }

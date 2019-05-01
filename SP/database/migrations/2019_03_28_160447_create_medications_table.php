@@ -13,12 +13,11 @@ class CreateMedicationsTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('medications', function (Blueprint $table) {            
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('daily_limit');
-            $table->string('pain_level');
             $table->string('dosage_instructions');
             $table->timestamps();
         });

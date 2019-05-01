@@ -136,7 +136,7 @@ tr {background-color: #ffffff !important;}
 
                                     @if (!is_null(Auth::user()->approved_at)) 
                                         <a class="dropdown-item" href="{{ route('profile') }}" >{{ __('Mano paskyra') }}</a>
-                                        <a class="dropdown-item" href="{{ route('edit_profile') }}" >{{ __('Paskyros redagavimas') }}</a>
+                                        <a class="dropdown-item" href="{{ route('edit') }}" >{{ __('Paskyros redagavimas') }}</a>
                                     @endif
                                     
                                     <a class="dropdown-item" href="{{ route('logout') }}"

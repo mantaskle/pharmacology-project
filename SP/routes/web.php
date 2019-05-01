@@ -23,25 +23,20 @@ Route::get('/kontaktai', function () {
     return view('kontaktai');
 });
 
-Route::get('/vaistu-dozavimas', function () {
-    return view('vaistu-dozavimas');
-});
-
-Route::get('/vaistai', function () {
-    return view('vaistai');
-});
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/approval', 'HomeController@approval')->name('approval');    
-    Route::get('/edit_profile', 'HomeController@edit_profile')->name('edit_profile');
+    Route::get('/edit_profile', 'HomeController@edit')->name('edit');
     Route::get('/profile', 'HomeController@profile')->name('profile');
+    Route::get('/vaistu-dozavimas', function () { return view('vaistu-dozavimas');} );    
+    Route::get('/vaistai', function () { return view('vaistai');} );        
+    Route::get('/rezultatai', function () { return view('rezultatai');} );
     Route::resource('pacients', 'PacientsController');
     Route::resource('prescriptions', 'PrescriptionsController');
+    Route::resource('medication', 'DosageController');
 
     Route::get('wiki', function() { return view('menu.wiki');} );
     Route::get('tickets', function() {return view('menu.tickets');} );

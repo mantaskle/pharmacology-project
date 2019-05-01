@@ -1,0 +1,99 @@
+$quantity = 0; 
+        $time = 0;
+
+        $this->validate($request, [
+            'medication'    =>  'required',
+            'age'   =>  'required',
+            'weight'    =>  'required',
+            'pain'    =>  'required'
+
+        ]);
+        $temp = new algotest([
+            'medication'    =>  $request->get('medication'),
+            'age'    =>  $request->get('age'),
+            'weight'    =>  $request->get('weight'),
+            'pain'    =>  $request->get('pain')
+        ]);
+        
+        $pain = $temp['pain'];
+        $age = $temp['age'];
+        $weight = $temp['weight'];
+        switch ($pain)
+        {
+            case ($pain < 4 && $pain > 0):
+                if($age < 12)
+                { 
+                    $quantity = $weight*0.05;
+                    $time = 4;
+                }
+                else
+                {
+                    $quantity = $weight*0.1;
+                    $time = 4;
+                }
+            break;
+
+            case ($pain < 8 && $pain > 4):
+                if($age < 12)
+                { 
+                    $quantity = $weight*0.1;
+                    $time = 4;
+                }
+                else
+                {
+                    $quantity = $weight*0.2;
+                    $time = 4;
+                }
+            break;
+
+            default:
+                if($age < 12)
+                { 
+                    $quantity = $weight*0.15;
+                    $time = 3;
+                }
+                else
+                {
+                    $quantity = $weight*0.4;
+                    $time = 3;
+                }
+            break;
+        }
+
+        $med = $temp['medication'];
+        switch($med)
+        {
+            case 'Morphine':
+                $quantity = $quantity / 10;
+            break;
+            
+            case 'Codeine':
+                $quantity = $quantity * 6.7;
+            break;
+
+            case 'Oxycodone':
+                $time = $time * 2.2;
+            break;
+
+            case 'Methadone':
+                $quantity = $quantity * 0.67;
+                $time = $time * 2;
+            break;
+
+            case 'Hydromorphone':
+                $quantity = $quantity * 0.25;
+            break;
+
+            case 'Meperidine':
+                $quantity = $quantity * 10;
+                $time = $time - 1;
+            break;
+
+            /* Morphine */
+            default:                
+                $quantity = $quantity / 10;
+            break;
+
+        }
+
+        return view('algotest.results', compact('quantity', 'time', 'temp'));

@@ -5,7 +5,7 @@
 <div class="row">
  <div class="col-md-12">
   <br />
-  <h3>Redaguoti paskirto vaisto informaciją</h3>
+  <h3>Redaguoti paskirto recepto informaciją</h3>
   <br />
   @if(count($errors) > 0)
 
@@ -20,13 +20,7 @@
    {{csrf_field()}}
    <input type="hidden" name="_method" value="PATCH" />
    <div class="form-group">
-    <input type="text" name="name" class="form-control" value="{{$prescriptions->name}}" placeholder="Įveskite pavadinimą" />
-   </div>
-   <div class="form-group">
-    <input type="text" name="dosage_amount" class="form-control" value="{{$prescriptions->dosage_amount}}" placeholder="Įveskite kiekį" />
-   </div>
-   <div class="form-group">
-    <input type="text" name="dosage_time" class="form-control" value="{{$prescriptions->dosage_time}}" placeholder="Įveskite laiką / kiekį" />
+    <input type="text" name="prescription_id" class="form-control" value="{{$prescriptions->name}}" placeholder="Įveskite recepto ID" />
    </div>
    <div class="form-group">
     <input type="text" name="from_date" class="form-control" value="{{$prescriptions->from_date}}" placeholder="Įveskite datą nuo" />
@@ -35,10 +29,10 @@
     <input type="text" name="to_date" class="form-control" value="{{$prescriptions->to_date}}" placeholder="Įveskite datą iki" />
    </div>
    <div class="form-group">
-    <input type="text" name="pacient_id" class="form-control" value="{{$prescriptions->pacient_id}}" placeholder="Įveskite pacientą" />
+    <input type="text" name="pacient_id" class="form-control" value="{{$prescriptions->pacient_id}}" placeholder="Pasirinkite paciento ID" />
    </div>
    <div class="form-group">
-    <input type="text" name="medication_id" class="form-control" value="{{$prescriptions->medication_id}}" placeholder="Įveskite paskirtą vaistą" />
+    <input type="text" name="medication_id" class="form-control" value="{{$prescriptions->medication_id}}" placeholder="Pasirinkite vaisto ID" />
    </div>
    <div class="form-group">
     <input type="text" name="additional_information" class="form-control" value="{{$prescriptions->additional_information}}" placeholder="Įveskite papildomą informaciją" />
