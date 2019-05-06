@@ -24,7 +24,9 @@
                         <td>{{Auth::user()->created_at}}</td>                           
                     </tr>
                 </table>
-                <td><a href="{{ url('/edit_profile') }}" class="btn btn-warning">Redaguoti paskyros duomenis</a></td>
+                @if(!Auth::user()->is_admin)
+                    <td><a href="{{ url('/edit_profile') }}" class="btn btn-warning">Redaguoti paskyros duomenis</a></td>
+                @endif
                 </div>
             </div>
         </div>

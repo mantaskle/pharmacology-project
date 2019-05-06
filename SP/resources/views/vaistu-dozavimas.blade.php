@@ -28,11 +28,14 @@
                         <input type="text" name="pain" class="form-control" placeholder="Įveskite skausmo lygmenį (0-12)" />
                     </div>
                     <div class="form-group">
-                        {!! Form::Label('Vaistai:') !!}
-                        {!! Form::select('medication', 
-                        array('1' => 'Morphine', '2' => 'Codeine', '3' => 'Oxycodone', '4' => 'Methadone', '5' => 'Hydromorphone',
-                        '6' => 'Meperidine'), 
-                        ['class' => 'form-control']) !!}
+
+                            {!! Form::Label('medication', 'Vaistas:') !!}
+                            <select class="form-control" name="medication">
+                                @foreach($medications as $med)
+                                <option value="{{$med->id}}">{{$med->name}}</option>
+                                @endforeach
+                            </select>                          
+
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Skaičuoti"/>

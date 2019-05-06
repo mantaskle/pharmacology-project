@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 01, 2019 at 09:54 PM
+-- Generation Time: May 06, 2019 at 05:07 PM
 -- Server version: 5.7.21
 -- PHP Version: 7.2.4
 
@@ -36,14 +36,19 @@ CREATE TABLE IF NOT EXISTS `medications` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `medications`
 --
 
 INSERT INTO `medications` (`id`, `name`, `dosage_instructions`, `created_at`, `updated_at`) VALUES
-(1, 'Morphine', 'ABC', '2019-04-07 15:00:00', '2019-04-14 15:00:00');
+(1, 'Morphine', 'ABC', '2019-04-07 15:00:00', '2019-04-14 15:00:00'),
+(2, 'Codeine', 'None', NULL, NULL),
+(3, 'Oxycodone', 'Test', NULL, NULL),
+(4, 'Methadone', '', NULL, NULL),
+(5, 'Hydromorphone', '', NULL, NULL),
+(6, 'Meperidine', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -165,17 +170,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `approved_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `admin`, `approved_at`) VALUES
-(1, 'Admin', 'admin@admin.com', '2019-03-26 20:01:57', '$2y$10$7xhqOtrY4AKOK4VIXGl0g.yalsZgCF/c.dgm.9//lRDJRpwzC31vi', 'UoIVgsbBsY19eG86tqtJQECtgO2SXmJe9WirK4sDeGhVYr12EyruvYDpWyeK', '2019-03-26 14:01:57', '2019-03-26 14:01:57', 1, '2019-03-26 14:01:57'),
+(1, 'Admin', 'admin@admin.com', '2019-03-26 20:01:57', '$2y$10$7xhqOtrY4AKOK4VIXGl0g.yalsZgCF/c.dgm.9//lRDJRpwzC31vi', 'yZYBbbu34FtK3hLThJMgqqC8tlJuPBT17j6zYuHelKfJv81iut2Oe3BSIb1A', '2019-03-26 14:01:57', '2019-03-26 14:01:57', 1, '2019-03-26 14:01:57'),
 (14, 'testinis', 'egle@mail.com', NULL, '$2y$10$9pOVmEPcWsX0aywtjrkgAOAqxkC9sD.j9BuDlhqD4SJM9EVQ9Htyy', NULL, '2019-04-14 21:01:05', '2019-04-14 21:01:46', 0, '2019-04-14 21:01:46'),
-(15, 'Jonas', 'jonas@admin.com', NULL, '$2y$10$Qz.eFmUuDUPmuy89hQkvi.pdTHEsL54HNf/cL8hm7ad5e/e.HpMfK', NULL, '2019-04-17 08:00:27', '2019-04-17 08:00:27', 0, NULL),
-(16, 'darvienas', 'dar@admin.com', NULL, '$2y$10$FWQnn.9iZwDJcWIKrEzO/.EXcN4QsJZ.t0G7LVywHXRejGXIq1V2q', NULL, '2019-04-17 08:00:48', '2019-04-17 08:00:48', 0, NULL);
+(15, 'Jonas', 'jonas@admin.com', NULL, '$2y$10$Qz.eFmUuDUPmuy89hQkvi.pdTHEsL54HNf/cL8hm7ad5e/e.HpMfK', NULL, '2019-04-17 08:00:27', '2019-04-17 08:00:27', 0, NULL);
 
 --
 -- Constraints for dumped tables

@@ -36,7 +36,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/rezultatai', function () { return view('rezultatai');} );
     Route::resource('pacients', 'PacientsController');
     Route::resource('prescriptions', 'PrescriptionsController');
-    Route::resource('medication', 'DosageController');
+    Route::resource('medication', 'DosageController');   
+    Route::get('/vaistu-dozavimas', 'DosageController@index');
 
     Route::get('wiki', function() { return view('menu.wiki');} );
     Route::get('tickets', function() {return view('menu.tickets');} );

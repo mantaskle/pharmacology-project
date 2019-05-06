@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Medication;
 use App\Pacients;
+use Illuminate\Support\Facades\DB;
 
 class DosageController extends Controller
 {
@@ -15,7 +16,8 @@ class DosageController extends Controller
      */
     public function index()
     {        
-        return view('vaistu-dozavimas');
+        $medications = Medication::all();
+        return view('vaistu-dozavimas', compact('medications'));
     }
 
     /**
@@ -25,7 +27,7 @@ class DosageController extends Controller
      */
     public function create()
     {
-        return view('vaistu-dozavimas');
+        //
     }
 
     /**

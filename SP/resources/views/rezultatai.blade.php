@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-12">
   <br/>
-    <h3 allign="center">Dozavimao rezultatai</h3>
+    <h3 allign="center">Dozavimo rezultatai</h3>
   <br/>
     <div allign="right">
         <a class="btn btn-primary" href="{{url('/vaistu-dozavimas')}}">Atgal</a>
