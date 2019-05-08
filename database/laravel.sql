@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 08, 2019 at 05:20 PM
--- Server version: 5.7.21
--- PHP Version: 7.2.4
+-- Generation Time: May 08, 2019 at 08:43 PM
+-- Server version: 5.7.24
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -37,14 +37,15 @@ CREATE TABLE IF NOT EXISTS `events` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `title`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
-(1, 'Sample', '2019-05-11', '2019-05-13', '2019-05-08 13:34:19', '2019-05-08 13:34:19');
+(1, 'Sample', '2019-05-11', '2019-05-13', '2019-05-08 13:34:19', '2019-05-08 13:34:19'),
+(2, 'did something', '2019-05-08', '2019-05-10', '2019-05-08 16:23:27', '2019-05-08 16:23:27');
 
 -- --------------------------------------------------------
 
@@ -56,7 +57,7 @@ DROP TABLE IF EXISTS `medications`;
 CREATE TABLE IF NOT EXISTS `medications` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dosage_instructions` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dosage_instructions` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -67,12 +68,12 @@ CREATE TABLE IF NOT EXISTS `medications` (
 --
 
 INSERT INTO `medications` (`id`, `name`, `dosage_instructions`, `created_at`, `updated_at`) VALUES
-(1, 'Morphine', 'ABC', '2019-04-07 15:00:00', '2019-04-14 15:00:00'),
-(2, 'Codeine', 'None', NULL, NULL),
-(3, 'Oxycodone', 'Test', NULL, NULL),
-(4, 'Methadone', '', NULL, NULL),
-(5, 'Hydromorphone', '', NULL, NULL),
-(6, 'Meperidine', '', NULL, NULL);
+(1, 'Morphine', 'Morfinas (morfijus) – nuskausminantis medikamentas kartu sukeliantis euforiją. Tai esminė veiklioji opiumo medžiaga. Jo vardas suteiktas pagal senovės graikų sapnų ir miego dievo vardą: Morfėjus. Morfijų 1803 m. išskyrė vokietis Saturnietis.', '2019-04-07 15:00:00', '2019-04-14 15:00:00'),
+(2, 'Codeine', 'Kodeinas (metilmorfinas) – natūralus opijaus alkaloidas. Kodeinas įeina į vaistingųjų preparatų nuo kosulio sudėtį. Narkotiniu požiūriu kodeinas yra 4–5 kartus silpnesnis nei morfinas.\r\nKodeinas tai opiumo alkaloidas, esantis keliose aguonų rūšyse. Opiume yra apie 4 proc. kodeino. Kodeinas yra morfino 3-metilo eteris ir yra paverčiamas morfinu, nokstant aguonoms. Apie 80 proc. pasaulyje pagaminto morfino (morfijaus) yra metilinama iki gydyti svarbesnio kodeino. Palyginti su morfinu, kodeinas pasižymi labai nestipriu analgetiniu poveikiu, tačiau jis sustiprina kitų analgetikų poveikį. Jis stipriai slopina kosulį. Svarbu tai, kad jis, palyginti su kitais analgetikais, žmogui sukelia tik silpną pripratimą.\r\n', NULL, NULL),
+(3, 'Oxycodone', 'OxycodoneLannacher yra stiprus skausmą malšinantis opioidų grupės vaistas.\r\nOxycodoneLannacher vartojamas stipriam skausmui malšinti, kuriam reikalingi opioidų grupės skausmą malšinantys preparatai, nes kiti vaistai skausmą slopina nepakankamai.\r\n', NULL, NULL),
+(4, 'Methadone', 'Metadonas – opioidų grupei priklausantis vaistas. Kiti šiai grupei priklausantys vaistai – morfinas, fen-tanilis, tramadolis. Metadonas (0.1% metadono hi-drochlorido tirpalas) yra šalių sveikatos apsaugos ministerijų patvirtintas vaistas priklausomybės nuo opioidų gydymui. Jį reikia išgerti vieną kartą per dieną.  Metadono  skyrimo  tikslas –  normalizuoti Jūsų savijautą, nuslopinti potraukį heroinui ar ki-tiems gatvės opioidams (Estijoje – fentanilio grupės narkotikams), nutraukti gatvės opioidų vartojimą ir suteikti Jūsų gyvenimui stabilumo. Kiti Lietuvoje naudojami šios grupės vaistai priklausomybei nuo heroino gydyti – buprenorfino tabletės (Subutex®, Suboxone®). Jų skyrimas ir gydymo organizavimas labai panašus kaip ir metadono.', NULL, NULL),
+(5, 'Hydromorphone', '“Hydromorphone” yra receptinis vaistas, parduodamas pagal “Dilaudid®” prekės ženklą. Šis vaistas yra opioidas arba narkotinis skausmas, kuris yra panašus į morfino, ir gydytojai gali skirti jį gydyti kai kuriuos vidutinio sunkumo ar sunkius lėtinio skausmo tipus. Hidromorfono vaistas gali sukelti tam tikrų rimtų šalutinių reiškinių, kurie paprastai reikalauja medicininės pagalbos, taip pat gali sąveikauti su kitais vaistiniais preparatais. Daugeliu atvejų pacientas gali pasikalbėti su gydytoju apie šį vaistą, kad nustatytų, ar jis yra tinkamas jo individualiam atvejui. Šis vaistas yra piliulės formos arba skystos formos, o vaisto ilgai išsiskiriantis vaistas dažnai gali būti nuolatinis skausmo šalinimas.', NULL, NULL),
+(6, 'Meperidine', 'Meperidinas yra opioidinis nuskausminamasis, kartais vadinamas narkotine medžiaga.\r\nMeperidinas vartojamas nuo vidutinio sunkumo iki stipraus skausmo.', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `pacients` (
 
 INSERT INTO `pacients` (`id`, `name`, `surname`, `age`, `height`, `weight`, `condition`, `treatment_done`, `additional_information`, `created_at`, `updated_at`) VALUES
 (1, 'Jonas', 'Jonaitis', 64, 182, 77, 3, 0, 'Pirmas gydymas morfinu.', '2019-04-15 00:55:14', '2019-04-15 00:55:14'),
-(2, 'Jonas3', 'Jonukas', 43, 181, 66, 7, 0, 'Alergi�kas *....* cheminei med�iagai.', '2019-04-16 01:43:12', '2019-04-16 01:43:12'),
+(2, 'Jonas3', 'Jonukas', 43, 181, 66, 7, 0, 'Alergi', '2019-04-16 01:43:12', '2019-04-16 01:43:12'),
 (3, 'Jonas2', 'Oi tas Jonas', 99, 188, 77, 4, 0, 'Labai nekantrus.', '2019-04-16 01:46:31', '2019-04-16 01:46:31');
 
 -- --------------------------------------------------------
@@ -174,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `prescriptions` (
 --
 
 INSERT INTO `prescriptions` (`id`, `prescription_id`, `from_date`, `to_date`, `additional_information`, `pacient_id`, `medication_id`, `created_at`, `updated_at`) VALUES
-(1, 'P0001', '2019-05-01', '2019-05-15', 'Testing', 1, 1, NULL, NULL);
+(1, 'P0001', '2019-05-01', '2019-05-15', 'Testing', 1, 1, NULL, '2019-05-08 16:02:48');
 
 -- --------------------------------------------------------
 

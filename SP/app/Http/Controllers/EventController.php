@@ -40,8 +40,8 @@ class EventController extends Controller
                             null,
                             // Add color
                          [
-                             'color' => '#000000',
-                             'textColor' => '#008000',
+                             'color' => '#3788d8',
+                             'textColor' => '#FFFFFF',
                          ]
                         );
                     }

@@ -20,16 +20,18 @@
    {{csrf_field()}}
    <input type="hidden" name="_method" value="PATCH" />
    <div class="form-group">
-    <input type="text" name="prescription_id" class="form-control" value="{{$prescriptions->name}}" placeholder="Įveskite recepto ID" />
+   <label for="prescription_id">Recepto ID:</label>
+    <input type="text" name="prescription_id" class="form-control" value="{{$prescriptions->prescription_id}}" placeholder="Įveskite recepto ID" />
    </div>
    <div class="form-group">
+   <label for="from_date">Data nuo:</label>
     <input type="text" name="from_date" class="form-control" value="{{$prescriptions->from_date}}" placeholder="Įveskite datą nuo" />
    </div>
    <div class="form-group">
+   <label for="to_date">Data iki:</label>
     <input type="text" name="to_date" class="form-control" value="{{$prescriptions->to_date}}" placeholder="Įveskite datą iki" />
    </div>
    <div class="form-group">
-
               {!! Form::Label('pacient_id', 'Pacientas:') !!}
               <select class="form-control" name="pacient_id">
                      @foreach($allPacients as $pacient)
@@ -39,7 +41,6 @@
 
        </div>
    <div class="form-group">
-
        {!! Form::Label('medication_id', 'Vaistas:') !!}
        <select class="form-control" name="medication_id">
               @foreach($allMeds as $med)
