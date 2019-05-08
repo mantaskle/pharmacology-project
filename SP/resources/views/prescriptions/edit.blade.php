@@ -29,12 +29,27 @@
     <input type="text" name="to_date" class="form-control" value="{{$prescriptions->to_date}}" placeholder="Įveskite datą iki" />
    </div>
    <div class="form-group">
-    <input type="text" name="pacient_id" class="form-control" value="{{$prescriptions->pacient_id}}" placeholder="Pasirinkite paciento ID" />
-   </div>
+
+              {!! Form::Label('pacient_id', 'Pacientas:') !!}
+              <select class="form-control" name="pacient_id">
+                     @foreach($allPacients as $pacient)
+                     <option value="{{$pacient->id}}">{{$pacient->name}} {{$pacient->surname}}</option>
+                     @endforeach
+              </select>                          
+
+       </div>
    <div class="form-group">
-    <input type="text" name="medication_id" class="form-control" value="{{$prescriptions->medication_id}}" placeholder="Pasirinkite vaisto ID" />
+
+       {!! Form::Label('medication_id', 'Vaistas:') !!}
+       <select class="form-control" name="medication_id">
+              @foreach($allMeds as $med)
+              <option value="{{$med->id}}">{{$med->name}}</option>
+              @endforeach
+       </select>                          
+
    </div>
-   <div class="form-group">
+   <div class="form-group">   
+   <label>Papildoma informacija:</label>
     <input type="text" name="additional_information" class="form-control" value="{{$prescriptions->additional_information}}" placeholder="Įveskite papildomą informaciją" />
    </div>
    <div class="form-group">

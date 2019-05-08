@@ -27,8 +27,10 @@ class PrescriptionsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('prescriptions.create');
+    {        
+        $allPacients = pacients::all();
+        $allMeds = medication::all();
+        return view('prescriptions.create', compact('allMeds', 'allPacients'));
     }
 
     /**
@@ -168,7 +170,11 @@ class PrescriptionsController extends Controller
     public function edit($id)
     {
         $prescriptions = prescriptions::find($id);
-        return view('prescriptions.edit', compact('prescriptions', 'id'));
+        $allPacients = pacients::all();
+        $pacient = pacients::find($prescriptions->pacient_id);
+        $allMeds = medication::all();
+        $medication = medication::find($prescriptions->medication_id);
+        return view('prescriptions.edit', compact('prescriptions', 'id', 'allPacients', 'pacient', 'allMeds', 'medication'));
     }
 
     /**

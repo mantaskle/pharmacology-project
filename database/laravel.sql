@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 06, 2019 at 05:07 PM
+-- Generation Time: May 08, 2019 at 05:20 PM
 -- Server version: 5.7.21
 -- PHP Version: 7.2.4
 
@@ -21,6 +21,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `laravel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+DROP TABLE IF EXISTS `events`;
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `title`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
+(1, 'Sample', '2019-05-11', '2019-05-13', '2019-05-08 13:34:19', '2019-05-08 13:34:19');
 
 -- --------------------------------------------------------
 
@@ -62,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -70,11 +94,13 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (61, '2019_04_17_102929_create_prescriptions_table', 1),
+(62, '2019_05_08_150242_create_events_table', 2),
 (60, '2019_04_15_073913_create_pacients_table', 1),
 (56, '2014_10_12_000000_create_users_table', 1),
 (57, '2014_10_12_100000_create_password_resets_table', 1),
 (58, '2019_03_26_192224_add_admin_to_users_table', 1),
-(59, '2019_03_28_160447_create_medications_table', 1);
+(59, '2019_03_28_160447_create_medications_table', 1),
+(63, '2019_05_08_162110_create_events_table', 3);
 
 -- --------------------------------------------------------
 

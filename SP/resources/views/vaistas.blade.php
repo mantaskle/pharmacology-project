@@ -13,19 +13,20 @@ td
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Galimi vaistai dozavimui</div>
+                <div class="card-header">{{$medication->name}}</div>
 
                 <div class="card-body">
                 <table class="table table-bordered table-striped">
                 <tr>
-                    <th colspan="2">Pavadinimas</th>
+                    <th colspan="1">Papildoma informacija apie vaistą</th>
                 </tr>
-                @foreach($medications as $row)
                 <tr>
-                    <td>{{$row['name']}}</td><td><a href="{{action('DosageController@show', $row['id'])}}" class="btn btn-warning">Daugiau informacijos</a></td>
+                    <td>{{$medication->dosage_instructions}}</td>
                 </tr>
-                @endforeach
                 </table>
+                <div class="form-group">
+                    <td><a href="{{ url('/vaistai') }}" class="btn btn-primary btn-m">Atgal</a></td>
+                </div>
                 </div>
             </div>
         </div>

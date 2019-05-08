@@ -38,9 +38,14 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('prescriptions', 'PrescriptionsController');
     Route::resource('medication', 'DosageController');   
     Route::get('/vaistu-dozavimas', 'DosageController@index');
-
+    Route::get('/vaistai', 'DosageController@showAll');
+    Route::get('/vaistas', function() { return view('vaistas');} );
     Route::get('wiki', function() { return view('menu.wiki');} );
     Route::get('tickets', function() {return view('menu.tickets');} );
+
+    Route::get('event/add','EventController@createEvent');
+    Route::post('event/add','EventController@store');
+    Route::get('event','EventController@calendar');
 
     Route::middleware(['approved'])->group(function () {
         Route::get('/home', 'HomeController@index')->name('home');

@@ -49,8 +49,8 @@ tr {background-color: #ffffff !important;}
 
     <title>{{ config('app.name', 'AMAE') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- Scripts (REMOVED defer OPTION FROM SRC)-->
+    <script src="{{ asset('js/app.js') }}" ></script> <!-- << from here -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -58,6 +58,8 @@ tr {background-color: #ffffff !important;}
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
 </head>
 <body>
     <div id="app">
@@ -97,6 +99,18 @@ tr {background-color: #ffffff !important;}
                         </a> 
 
                         <a class="nav-link" href="{{ url('wiki') }}">{{ __('WIKI') }}</a> 
+
+                        <a class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ __('Kalendorius') }} <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('event') }}" >{{ __('Peržiūra') }}</a>  
+                                    <a class="dropdown-item" href="{{ url('event/add') }}" >{{ __('Pridėti paciento vizitą') }}</a>
+                                </div>
+                            </li>
+                        </a> 
 
                         @endif
 

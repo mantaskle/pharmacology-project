@@ -143,7 +143,14 @@ class DosageController extends Controller
      */
     public function show($id)
     {    
-        //
+        $medication = medication::find($id);
+        return view('vaistas', compact('medication'));
+    }
+
+    public function showAll()
+    {
+        $medications = medication::all();
+        return view('vaistai', compact('medications'));
     }
 
     /**
