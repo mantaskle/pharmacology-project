@@ -18,7 +18,7 @@
         <th>Dozė</th>
         </tr>
     <tr>
-        <td>{{$medication}}</td>
+        <td>{{$medication->name}}</td>
         <td>{{$quantity}}</td>
         <td>kas {{$time}} valandas/-ų</td>
    </tr>

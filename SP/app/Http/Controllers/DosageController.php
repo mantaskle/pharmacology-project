@@ -48,7 +48,8 @@ class DosageController extends Controller
         $age = $request->get('age');
         $weight = $request->get('weight');
         $pain= $request->get('pain');        
-        $medication = $request->get('medication');
+        $medication_id = $request->get('medication');
+        $medication = medication::find($medication_id);
 
         $selectedID = 1;
 
@@ -97,7 +98,7 @@ class DosageController extends Controller
             break;
         }
 
-        switch($medication)
+        switch($medication->name)
         {
             case 'Morphine':
                 $quantity = $quantity / 10;
