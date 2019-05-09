@@ -39,18 +39,6 @@ tr:nth-child(even) {background-color: #f1f1f1 !important;}
 tr:hover {background-color: #ddd !important;}
 tr {background-color: #ffffff !important;}
 
-label_dark
-{
-    color: #303030 !important
-    font-family: 'Nunito', sans-serif;
-}
-
-label
-{
-    color: #ffffff;
-    font-family: 'Nunito', sans-serif;
-}
-
 </style>
 <head>
     <meta charset="utf-8">

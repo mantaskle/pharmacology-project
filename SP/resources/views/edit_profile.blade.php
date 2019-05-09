@@ -21,11 +21,11 @@
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="PATCH" />
                         <div class="form-group">
-                            <label for="name" style="color: #303030">Vartotojo vardas</label>
+                            <label for="name"">Vartotojo vardas</label>
                             <input type="text" name="name" class="form-control" value="{{$user->name}}" placeholder="Įveskite vartotojo vardą" />
                         </div>
                         <div class="form-group">
-                        <label for="email" style="color: #303030">El. paštas</label>
+                        <label for="email">El. paštas</label>
                             <input type="text" name="email" class="form-control" value="{{$user->email}}" placeholder="Įveskite el. paštą" />
                         </div>
                         <div class="form-group">

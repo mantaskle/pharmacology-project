@@ -20,15 +20,15 @@
    {{csrf_field()}}
    <input type="hidden" name="_method" value="PATCH" />
    <div class="form-group">
-   <label for="prescription_id">Recepto ID:</label>
+   <label style="color: #ffffff" for="prescription_id">Recepto ID:</label>
     <input type="text" name="prescription_id" class="form-control" value="{{$prescriptions->prescription_id}}" placeholder="Įveskite recepto ID" />
    </div>
    <div class="form-group">
-   <label for="from_date">Data nuo:</label>
+   <label style="color: #ffffff" for="from_date">Data nuo:</label>
     <input type="text" name="from_date" class="form-control" value="{{$prescriptions->from_date}}" placeholder="Įveskite datą nuo" />
    </div>
    <div class="form-group">
-   <label for="to_date">Data iki:</label>
+   <label style="color: #ffffff" for="to_date">Data iki:</label>
     <input type="text" name="to_date" class="form-control" value="{{$prescriptions->to_date}}" placeholder="Įveskite datą iki" />
    </div>
    <div class="form-group">
@@ -50,7 +50,7 @@
 
    </div>
    <div class="form-group">   
-   <label>Papildoma informacija:</label>
+   <label style="color: #ffffff">Papildoma informacija:</label>
     <input type="text" name="additional_information" class="form-control" value="{{$prescriptions->additional_information}}" placeholder="Įveskite papildomą informaciją" />
    </div>
    <div class="form-group">
