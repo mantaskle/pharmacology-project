@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Naujų vartotojų sąrašas (laukia patvirtinimo)</div>
+                    <div class="card-header"><strong>Naujų vartotojų sąrašas (laukia patvirtinimo)</strong></div>
 
                     <div class="card-body">
 

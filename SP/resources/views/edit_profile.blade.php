@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Paskyros redagavimas</div>
+                <div class="card-header"><strong>Paskyros redagavimas</strong></div>
                 <div class="card-body">
                 @if(count($errors) > 0)
                     <div class="alert alert-danger">
@@ -21,7 +21,7 @@
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="PATCH" />
                         <div class="form-group">
-                            <label for="name"">Vartotojo vardas</label>
+                            <label for="name">Vartotojo vardas</label>
                             <input type="text" name="name" class="form-control" value="{{$user->name}}" placeholder="Įveskite vartotojo vardą" />
                         </div>
                         <div class="form-group">

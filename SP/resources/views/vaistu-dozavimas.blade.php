@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Vaistų dozavimas</div>
+                <div class="card-header"><strong>Vaistų dozavimas</strong></div>
                 @if(count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>

@@ -40,7 +40,7 @@
     <input type="text" name="weight" class="form-control" value="{{$pacients->weight}}" placeholder="Įveskite svorį (kilogramais)" />
    </div>
    <div class="form-group">
-    <label style="color: #ffffff" for="condition">Skausmo lygmuo (0-10):</label>
+    <label style="color: #ffffff" for="condition">Skausmo lygmuo (0-12):</label>
     <input type="text" name="condition" class="form-control" value="{{$pacients->condition}}" placeholder="Įveskite skausmo lygmenį (0-10)" />
    </div>
    <div class="form-group">

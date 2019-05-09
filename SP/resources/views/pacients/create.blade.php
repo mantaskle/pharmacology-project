@@ -39,7 +39,7 @@
     <input type="text" name="weight" class="form-control" placeholder="Įveskite svorį (kilogramais)" />
    </div>
    <div class="form-group">
-    <input type="text" name="condition" class="form-control" placeholder="Įveskite skausmo lygmenį (0-10)" />
+    <input type="text" name="condition" class="form-control" placeholder="Įveskite skausmo lygmenį (0-12)" />
    </div>
    <div class="form-group">
     <input type="text" name="additional_information" class="form-control" placeholder="Įveskite papildomą informaciją (ankstesnė gydymo istorija)" />
