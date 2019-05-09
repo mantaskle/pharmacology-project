@@ -18,21 +18,21 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <strong>Aprašymas:</strong>
+            <strong style="color: #ffffff">Aprašymas:</strong>
             <input type="text" class="form-control" name="title">
           </div>
         </div>
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <strong> Planuojama vizito data : </strong>  
+            <strong style="color: #ffffff"> Planuojama vizito data : </strong>  
             <input class="date form-control"  type="text" id="start_date" name="start_date">   
          </div>
         </div>
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <strong> Vizito paskyrimo galiojimas iki datos: </strong>  
+            <strong style="color: #ffffff"> Vizito paskyrimo galiojimas iki datos: </strong>  
             <input class="date form-control"  type="text" id="end_date" name="end_date">   
          </div>
         </div>
