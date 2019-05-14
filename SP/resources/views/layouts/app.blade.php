@@ -111,16 +111,19 @@ tr {background-color: #ffffff !important;}
                                 </div>
                             </li>
                         </a> 
+                        
+                        <a class="nav-link" href="{{ url('my_tickets') }}">{{ __('Užklausos') }}</a>
 
                         @endif
 
-                        <a class="nav-link" href="{{ url('tickets') }}">{{ __('Užklausos') }}</a>
 
                     @endif
 
                     @if(Auth::user()->admin) 
                     
                     <a class="nav-link" href="{{ url('/admin/users') }}">{{ __('Vartotojų patvirtinimas') }}</a>
+                    
+                    <a class="nav-link" href="{{ url('tickets') }}">{{ __('Užklausos') }}</a>
 
                     @endif
                     

@@ -41,11 +41,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/vaistai', 'DosageController@showAll');
     Route::get('/vaistas', function() { return view('vaistas');} );
     Route::get('wiki', function() { return view('menu.wiki');} );
-    Route::get('tickets', function() {return view('menu.tickets');} );
 
     Route::get('event/add','EventController@createEvent');
     Route::post('event/add','EventController@store');
     Route::get('event','EventController@calendar');
+
+    Route::get('new_ticket', 'TicketsController@create');
+    Route::post('new_ticket', 'TicketsController@store');
+    Route::get('my_tickets', 'TicketsController@userTickets');
+    Route::get('tickets/{ticket_id}', 'TicketsController@show');
+    Route::post('comment', 'CommentsController@postComment');
 
     Route::middleware(['approved'])->group(function () {
         Route::get('/home', 'HomeController@index')->name('home');
@@ -54,12 +59,15 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['admin'])->group(function () {
         Route::get('/users', 'UserController@index')->name('admin.users.index');
         Route::get('/users/{user_id}/approve', 'UserController@approve')->name('admin.users.approve');
-        Route::get('/users/{user_id}/destroy', 'UserController@destroy')->name('admin.users.destroy');
+        Route::get('/users/{user_id}/destroy', 'UserController@destroy')->name('admin.users.destroy');        
+        Route::get('tickets', 'TicketsController@index');
+        Route::post('close_ticket/{ticket_id}', 'TicketsController@close');
         
     });
 
     Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::resource('home', 'HomeController');
         Route::resource('users', 'UserController');
+
     });
 });

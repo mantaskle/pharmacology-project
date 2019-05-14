@@ -7,10 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable 
 {
-    use Notifiable;
-    use \Illuminate\Notifications\Notifiable;
-
-    /**
+        /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -36,4 +33,16 @@ class User extends Authenticatable
     protected $casts = [
 
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    
 }
