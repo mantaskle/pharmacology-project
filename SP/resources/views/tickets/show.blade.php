@@ -1,29 +1,31 @@
 @extends('layouts.app')
 
+
+
 @section('title', $ticket->title)
 
 @section('content')
-    <div class="row">
+    <div class="row text-white">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    #{{ $ticket->ticket_id }} - {{ $ticket->title }}
+                <div class="panel-heading h2">
+                    <p>#{{ $ticket->ticket_id }} - {{ $ticket->title }}</p>
                 </div>
 
                 <div class="panel-body">
                     @include('includes.flash')
 
                     <div class="ticket-info">
-                        <p>{{ $ticket->message }}</p>
-                        <p>Kategorija: {{ $category->name }}</p>
+                        <p><b>Užklausos tekstas:</b>  {{ $ticket->message }}</p>
+                        <p><b>Kategorija:</b> {{ $category->name }}</p>
                         <p>
                         @if ($ticket->status === 'Atidaryta')
-                            Būsena: <span class="label label-success">{{ $ticket->status }}</span>
+                            <b>Būsena:</b> <span class="label label-success">{{ $ticket->status }}</span>
                         @else
-                            Būsena: <span class="label label-danger">{{ $ticket->status }}</span>
+                            <b>Būsena:</b> <span class="label label-danger">{{ $ticket->status }}</span>
                         @endif
                         </p>
-                        <p>Sukurta: {{ $ticket->created_at->diffForHumans() }}</p>
+                        <p><b>Sukurta:</b> {{ $ticket->created_at->diffForHumans() }}</p>
                     </div>
 
                     <hr>
@@ -50,6 +52,7 @@
                 
 
                     <div class="comment-form">
+                        <p><b>Pridėti komentarą:</b></p>
                         <form action="{{ url('comment') }}" method="POST" class="form">
                             {!! csrf_field() !!}
 
@@ -67,6 +70,11 @@
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Išsaugoti</button>
+                                @if (Auth::user()->admin)
+                                    <a class="btn btn-primary" href="{{url('tickets')}}">Atgal</a>
+                                @else
+                                <a class="btn btn-primary" href="{{url('my_tickets')}}">Atgal</a>
+                                @endif
                             </div>
                         </form>
                 </div>

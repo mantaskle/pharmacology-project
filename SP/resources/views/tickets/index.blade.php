@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('title', 'Visos užklausos')
 
 @section('content')
@@ -7,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-ticket"> Užklausos</i>
+                    <p class="h2 text-white fa fa-ticket">Užklausos</p>
                 </div>
 
                 <div class="panel-body">

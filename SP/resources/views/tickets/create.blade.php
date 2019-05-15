@@ -3,10 +3,10 @@
 @section('title', 'Nauja užklausa')
 
 @section('content')
-    <div class="row">
+    <div class="row text-white">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Pridėti naują užklausą</div>
+                <div class="panel-heading h2"><p>Pridėti naują užklausą<p></div>
 
                 <div class="panel-body">
                     @include('includes.flash')
@@ -85,6 +85,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-ticket"></i> Pridėti užklausą
                                 </button>
+                                <a class="btn btn-primary" href="{{url('my_tickets')}}">Atgal</a>
                             </div>
                         </div>
                     </form>

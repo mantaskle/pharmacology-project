@@ -7,7 +7,11 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-ticket"> Mano užklausos</i>
+                    <p class="fa fa-ticket h2 text-white">Mano užklausos</p>
+                </div>
+
+                <div class="panel-body">
+                <a class="btn-marg btn btn-primary" href="{{url('new_ticket')}}">Pridėti naują užklausą</a>
                 </div>
 
                 <div class="panel-body">
