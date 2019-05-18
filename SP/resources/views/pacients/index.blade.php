@@ -48,7 +48,8 @@
         </td>
    </tr>
    @endforeach
-  </table>
+  </table>  
+  {{ $pacients->render() }}
  </div>
 </div>
 <script>

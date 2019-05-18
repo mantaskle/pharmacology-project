@@ -16,7 +16,7 @@ class PrescriptionsController extends Controller
      */
     public function index()
     {
-        $prescriptions = Prescriptions::all()->toArray();
+        $prescriptions = Prescriptions::paginate(10);
 
         return view('prescriptions.index', compact('prescriptions'));
     }

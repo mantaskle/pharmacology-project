@@ -43,6 +43,7 @@
    </tr>
    @endforeach
   </table>
+  {{ $prescriptions->render() }}
  </div>
 </div>
 <script>

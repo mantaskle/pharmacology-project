@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
- <div class="col-md-12">
+ <div class="col-md-8">
   <br />
   <h3 aling="center">Pridėti paskirtą receptą</h3>
   <br />
@@ -32,26 +32,43 @@
    <div class="form-group">
     <input type="text" name="to_date" class="form-control" placeholder="Įveskite datą iki" />
    </div>
-   <div class="form-group">
 
-              {!! Form::Label('pacient_id', 'Pacientas:') !!}
-              <select class="form-control" name="pacient_id">
-                     @foreach($allPacients as $pacient)
-                     <option value="{{$pacient->id}}">{{$pacient->name}} {{$pacient->surname}}</option>
-                     @endforeach
-              </select>                          
+   <div class="form-group{{ $errors->has('pacient_id') ? ' has-error' : '' }}">
+   <label for="pacient_id">Pacientas:</label>
 
-       </div>
-   <div class="form-group">
 
-       {!! Form::Label('medication_id', 'Vaistas:') !!}
-       <select class="form-control" name="medication_id">
-              @foreach($allMeds as $med)
-              <option value="{{$med->id}}">{{$med->name}}</option>
+       <select id="pacient_id" type="pacient_id" class="form-control" name="pacient_id">
+              <option value="">Pasirinkite pacientą</option>
+              @foreach ($allPacients as $pacient)
+              <option value="{{ $pacient->id }}">{{ $pacient->name }} {{$pacient->surname}}</option>
               @endforeach
-       </select>                          
+       </select>
 
+       @if ($errors->has('pacient_id'))
+              <span class="help-block">
+              <strong>{{ $errors->first('pacient_id') }}</strong>
+              </span>
+       @endif      
    </div>
+
+   <div class="form-group{{ $errors->has('medication_id') ? ' has-error' : '' }}">
+       <label for="medication_id">Vaistas:</label>
+
+       
+              <select id="medication_id" type="medication_id" class="form-control" name="medication_id">
+                     <option value="">Pasirinkite vaistą</option>
+                     @foreach ($allMeds as $med)
+                     <option value="{{ $med->id }}">{{ $med->name }}</option>
+                     @endforeach
+              </select>
+
+              @if ($errors->has('medication_id'))
+                     <span class="help-block">
+                     <strong>{{ $errors->first('medication_id') }}</strong>
+                     </span>
+              @endif      
+   </div>
+
    <div class="form-group">
    <label>Papildoma informacija:</label>
     <input type="text" name="additional_information" class="form-control" placeholder="Įveskite papildomą informaciją (ankstesnė gydymo istorija)" />

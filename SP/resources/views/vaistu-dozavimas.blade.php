@@ -27,16 +27,24 @@
                     <div class="form-group">
                         <input type="text" name="pain" class="form-control" placeholder="Įveskite skausmo lygmenį (0-12)" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group{{ $errors->has('medication') ? ' has-error' : '' }}">
+                        <label for="medication">Vaistas:</label>
 
-                            {!! Form::Label('medication', 'Vaistas:') !!}
-                            <select class="form-control" name="medication">
-                                @foreach($medications as $med)
-                                <option value="{{$med->id}}">{{$med->name}}</option>
-                                @endforeach
-                            </select>                          
 
+                            <select id="medication" type="medication" class="form-control" name="medication">
+                                    <option value="">Pasirinkite vaistą</option>
+                                    @foreach ($medications as $med)
+                                    <option value="{{ $med->id }}">{{ $med->name }}</option>
+                                    @endforeach
+                            </select>
+
+                            @if ($errors->has('pacient_id'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('pacient_id') }}</strong>
+                                    </span>
+                            @endif      
                     </div>
+
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Skaičuoti"/>
                     </div>

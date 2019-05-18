@@ -14,7 +14,7 @@ class PacientsController extends Controller
      */
     public function index()
     {
-        $pacients = Pacients::all()->toArray();
+        $pacients = Pacients::paginate(10);
         return view('pacients.index', compact('pacients'));
     }
 
