@@ -107,7 +107,7 @@ tr {background-color: #ffffff !important;}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ url('event') }}" >{{ __('Peržiūra') }}</a>  
-                                    <a class="dropdown-item" href="{{ url('event/add') }}" >{{ __('Pridėti paciento vizitą') }}</a>
+                                    <a class="dropdown-item" href="{{ url('event/add') }}" >{{ __('Pridėti naują įvykį') }}</a>
                                 </div>
                             </li>
                         </a> 

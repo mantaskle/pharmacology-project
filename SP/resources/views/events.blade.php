@@ -25,14 +25,16 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <strong style="color: #ffffff"> Planuojama vizito data : </strong>  
+            <strong style="color: #ffffff"> Įvykio pradžios data (mmmm-mm-dd): </strong>  
             <input class="date form-control"  type="text" id="start_date" name="start_date">   
          </div>
         </div>
+        
+
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <strong style="color: #ffffff"> Vizito paskyrimo galiojimas iki datos: </strong>  
+            <strong style="color: #ffffff"> Įvykio pabaigos data (mmmm-mm-dd): </strong>  
             <input class="date form-control"  type="text" id="end_date" name="end_date">   
          </div>
         </div>

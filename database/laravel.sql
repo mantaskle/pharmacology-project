@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 14, 2019 at 06:00 PM
+-- Generation Time: May 21, 2019 at 03:25 PM
 -- Server version: 5.7.21
 -- PHP Version: 7.2.4
 
@@ -35,14 +35,16 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Techninė', '2019-05-14 13:54:01', '2019-05-14 13:54:01');
+(1, 'Techninė', '2019-05-14 13:54:01', '2019-05-14 13:54:01'),
+(2, 'Klausimas', NULL, NULL),
+(3, 'Klaida sistemoje', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -83,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `events`
@@ -91,7 +93,8 @@ CREATE TABLE IF NOT EXISTS `events` (
 
 INSERT INTO `events` (`id`, `title`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
 (1, 'Sample', '2019-05-11', '2019-05-13', '2019-05-08 13:34:19', '2019-05-08 13:34:19'),
-(2, 'did something', '2019-05-08', '2019-05-10', '2019-05-08 16:23:27', '2019-05-08 16:23:27');
+(2, 'did something', '2019-05-08', '2019-05-10', '2019-05-08 16:23:27', '2019-05-08 16:23:27'),
+(3, 'Susitikimas su vadovais.', '2019-06-02', '2019-06-03', '2019-05-21 12:16:02', '2019-05-21 12:16:02');
 
 -- --------------------------------------------------------
 
@@ -172,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `pacients` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `pacients`
@@ -180,8 +183,16 @@ CREATE TABLE IF NOT EXISTS `pacients` (
 
 INSERT INTO `pacients` (`id`, `name`, `surname`, `age`, `height`, `weight`, `condition`, `treatment_done`, `additional_information`, `created_at`, `updated_at`) VALUES
 (1, 'Jonas', 'Jonaitis', 64, 182, 77, 3, 0, 'Pirmas gydymas morfinu.', '2019-04-15 00:55:14', '2019-04-15 00:55:14'),
-(2, 'Jonas3', 'Jonukas', 43, 181, 66, 7, 0, 'Alergiškas *....* cheminei medžiagai.', '2019-04-16 01:43:12', '2019-04-16 01:43:12'),
-(3, 'Jonas2', 'Oi tas Jonas', 99, 188, 77, 4, 0, 'Labai nekantrus.', '2019-04-16 01:46:31', '2019-04-16 01:46:31');
+(2, 'Jonas', 'Jonukas', 43, 181, 66, 7, 0, 'Alergiškas *....* cheminei medžiagai.', '2019-04-16 01:43:12', '2019-04-16 01:43:12'),
+(3, 'Jonas', 'Jonas', 99, 188, 77, 4, 0, 'Labai nekantrus.', '2019-04-16 01:46:31', '2019-04-16 01:46:31'),
+(4, 'Kristina', 'Butkutė', 23, 166, 66, 6, 0, 'Pirmas gydymas Kodeinu.', '2019-05-21 12:09:56', '2019-05-21 12:09:56'),
+(5, 'Darius', 'Grigonis', 44, 188, 98, 2, 0, 'Pirmas gydymas morfinu.', '2019-05-21 12:10:27', '2019-05-21 12:11:54'),
+(6, 'Viktorija', 'Liutko', 42, 183, 80, 7, 0, 'Antras gydymas Kodeinu.', '2019-05-21 12:11:02', '2019-05-21 12:11:02'),
+(7, 'Mika', 'Mikėnaitė', 19, 154, 50, 3, 0, 'Alergiška Kodeinui.', '2019-05-21 12:11:30', '2019-05-21 12:11:30'),
+(8, 'Martis', 'Martėnas', 32, 158, 75, 9, 0, 'Nesigydė morfinu.', '2019-05-21 12:12:32', '2019-05-21 12:12:32'),
+(9, 'Averina', 'Severina', 28, 168, 62, 6, 0, 'Nesigydė morfinu.', '2019-05-21 12:13:09', '2019-05-21 12:13:09'),
+(10, 'Kostia', 'Morfauskas', 44, 195, 99, 5, 0, 'Morfino gydymas skirtas dėl nepakeliamo skausmo.', '2019-05-21 12:13:41', '2019-05-21 12:13:41'),
+(11, 'Martynas', 'Morkus', 40, 185, 86, 8, 0, 'Nesigydė Kodeinu.', '2019-05-21 12:14:22', '2019-05-21 12:14:22');
 
 -- --------------------------------------------------------
 
@@ -217,14 +228,15 @@ CREATE TABLE IF NOT EXISTS `prescriptions` (
   PRIMARY KEY (`id`),
   KEY `prescriptions_pacient_id_foreign` (`pacient_id`),
   KEY `prescriptions_medication_id_foreign` (`medication_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `prescriptions`
 --
 
 INSERT INTO `prescriptions` (`id`, `prescription_id`, `from_date`, `to_date`, `additional_information`, `pacient_id`, `medication_id`, `created_at`, `updated_at`) VALUES
-(1, 'P0001', '2019-05-01', '2019-05-15', 'Testing', 1, 1, NULL, NULL);
+(1, 'P0001', '2019-05-01', '2019-05-15', 'Testing', 1, 1, NULL, NULL),
+(2, 'P0987', '2019-06-01', '2019-07-01', '123 test', 3, 4, '2019-05-18 10:18:51', '2019-05-18 10:18:51');
 
 -- --------------------------------------------------------
 
@@ -246,14 +258,15 @@ CREATE TABLE IF NOT EXISTS `tickets` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `tickets_ticket_id_unique` (`ticket_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tickets`
 --
 
 INSERT INTO `tickets` (`id`, `user_id`, `category_id`, `ticket_id`, `title`, `priority`, `message`, `status`, `created_at`, `updated_at`) VALUES
-(1, 14, 1, 'IMFA7VMCUT', 'test', 'medium', '123 testing', 'Atidaryta', '2019-05-14 14:56:57', '2019-05-14 14:56:57');
+(1, 14, 1, 'IMFA7VMCUT', 'test', 'medium', '123 testing', 'Uždaryta', '2019-05-14 14:56:57', '2019-05-14 15:04:44'),
+(2, 14, 1, 'NCZI4HIREJ', 'nauja 112', 'high', 'Labai sekasi man...', 'Atidaryta', '2019-05-14 15:54:13', '2019-05-14 15:54:13');
 
 -- --------------------------------------------------------
 
@@ -282,8 +295,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `admin`, `approved_at`) VALUES
-(1, 'Admin', 'admin@admin.com', '2019-03-26 20:01:57', '$2y$10$7xhqOtrY4AKOK4VIXGl0g.yalsZgCF/c.dgm.9//lRDJRpwzC31vi', 'opfkRcsn05nFyv8sC5glCDAiXCT05zSC12xG0Fsqy3kaoDHFyb52iggfi809', '2019-03-26 14:01:57', '2019-03-26 14:01:57', 1, '2019-03-26 14:01:57'),
-(14, 'Egle', 'egle@mail.com', NULL, '$2y$10$9pOVmEPcWsX0aywtjrkgAOAqxkC9sD.j9BuDlhqD4SJM9EVQ9Htyy', NULL, '2019-04-14 21:01:05', '2019-05-09 05:23:28', 0, '2019-04-14 21:01:46'),
+(1, 'Admin', 'admin@admin.com', '2019-03-26 20:01:57', '$2y$10$7xhqOtrY4AKOK4VIXGl0g.yalsZgCF/c.dgm.9//lRDJRpwzC31vi', 'fRtvgZeOm3Ce0Tuu9iNo099hzS9XLSd2IhGkilcEKM5LcFYFK5lCwh5TxrGr', '2019-03-26 14:01:57', '2019-03-26 14:01:57', 1, '2019-03-26 14:01:57'),
+(14, 'Egle', 'egle@mail.com', NULL, '$2y$10$9pOVmEPcWsX0aywtjrkgAOAqxkC9sD.j9BuDlhqD4SJM9EVQ9Htyy', NULL, '2019-04-14 21:01:05', '2019-05-18 10:34:47', 0, '2019-04-14 21:01:46'),
 (15, 'Jonas', 'jonas@admin.com', NULL, '$2y$10$Qz.eFmUuDUPmuy89hQkvi.pdTHEsL54HNf/cL8hm7ad5e/e.HpMfK', NULL, '2019-04-17 08:00:27', '2019-05-09 02:40:07', 0, '2019-05-09 02:40:07');
 
 --
