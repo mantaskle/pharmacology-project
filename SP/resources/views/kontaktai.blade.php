@@ -42,7 +42,7 @@ html, body {
                 height: 100vh;
                 margin: 0;
             }
-.bg-text {
+.bg-border {
                 background-color: rgb(0,0,0); /* Fallback color */
                 background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
                 border: 3px solid #f1f1f1;
@@ -89,7 +89,7 @@ html, body {
          }
 </style>
 @section('content')
-<div class="bg-text">
+<div class="bg-border">
     <h1 class = "headin">KONTAKTAI</h1>
     <div class="vadovas">
         <h2>Projekto vadovas - Darius Naujokaitis</h2>
@@ -100,8 +100,8 @@ html, body {
     <h2>Komandos nariai</h2>
   </div>
   <div class="column">
-    <h2>Eglė Šatūnaitė</h2>
-    <p>eglsat@ktu.lt</p>
+    <h2>Augustas Talačka</h2>
+    <p>augtal@ktu.lt</p>
   </div>
   <div class="column" style="background-color: rgb(255,255,255);background-color: rgba(255,255,255,0.5);">
     <h2>Mantas Klevinskas</h2>
@@ -112,8 +112,8 @@ html, body {
     <p>aidbie@ktu.lt</p>
   </div>
   <div class="column" style="background-color: rgb(255,255,255);background-color: rgba(255,255,255,0.5);">
-    <h2>Augustas Talačka</h2>
-    <p>augtal@ktu.lt</p>
+    <h2>Eglė Šatūnaitė</h2>
+    <p>eglsat@ktu.lt</p>
   </div>
 </div>
 </div>

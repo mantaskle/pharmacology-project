@@ -11,7 +11,7 @@ html, body {
                 height: 100vh;
                 margin: 0;
             }
-.bg-text {
+.bg-border {
                 background-color: rgb(0,0,0); /* Fallback color */
                 background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
                 border: 3px solid #f1f1f1;
@@ -38,7 +38,7 @@ html, body {
          }
 </style>
 @section('content')
-<div class="bg-text">
+<div class="bg-border">
     <h1 class = "headin">APIE MUS</h1>
     <p class = "para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis, quam ac fermentum convallis, justo mauris accumsan nibh, nec scelerisque justo massa quis lorem. Nullam dignissim non felis eget faucibus. Donec at nibh nec ligula tempus dapibus. Donec eros lacus, pharetra quis justo id, ultrices vulputate purus. Maecenas sodales, tortor sit amet tincidunt bibendum, mauris felis vehicula lacus, vitae tristique ex elit efficitur massa. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
     <p class = "para">Donec vehicula elit non egestas fringilla. Proin orci ante, pellentesque ut massa nec, molestie ultrices turpis. Sed accumsan dignissim sapien, sit amet vehicula nulla auctor sed. Proin quis metus id mauris ornare eleifend ut at enim. Aenean libero tellus, condimentum eget diam id, imperdiet ultrices augue. Vestibulum pellentesque porta dui. Integer congue placerat sem, nec consequat odio ultricies nec. Maecenas in volutpat elit. Curabitur aliquam vel lorem vel tempus.</p>
