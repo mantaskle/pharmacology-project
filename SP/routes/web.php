@@ -43,7 +43,18 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/vaistu-dozavimas', 'DosageController@index');
         Route::get('/vaistai', 'DosageController@showAll');
         Route::get('/vaistas', function() { return view('vaistas');} );
-        Route::get('wiki', function() { return view('menu.wiki');} );
+        Route::get('wiki', function() { return view('wiki.index');} );
+            Route::get('wiki/navigacija', function() { return view('wiki.navigacija');} );
+            Route::get('wiki/prisijungimas', function() { return view('wiki.prisijungimas');} );
+            Route::get('wiki/registracija', function() { return view('wiki.registracija');} );
+            Route::get('wiki/puslapio-funkcijos', function() { return view('wiki.puslapio-funkcijos');} );
+            Route::get('wiki/vaistu-dozavimas', function() { return view('wiki.vaistu-dozavimas');} );
+            Route::get('wiki/vaistai', function() { return view('wiki.vaistai');} );
+            Route::get('wiki/pacientu-duombaze', function() { return view('wiki.pacientu-duombaze');} );
+            Route::get('wiki/receptu-paskyrimas', function() { return view('wiki.receptu-paskyrimas');} );
+            Route::get('wiki/kalendorius', function() { return view('wiki.kalendorius');} );
+            Route::get('wiki/uzklausos', function() { return view('wiki.uzklausos');} );
+
 
         Route::get('event/add','EventController@createEvent');
         Route::post('event/add','EventController@store');
